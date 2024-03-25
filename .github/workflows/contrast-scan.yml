@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses : Contrast-Security-OSS/contrast-local-scan-action@SCAN-5473
+      - uses : Contrast-Security-OSS/contrast-local-scan-action@SCAN-5505
         name: Run action against repoository
         with:
           apiUrl: ${{ secrets.CONTRAST__API__URL }}
@@ -25,3 +25,4 @@ jobs:
           apiOrgId: ${{ secrets.CONTRAST__API__ORGANIZATION }}
           checks: true
           severity: critical
+          defaultBranch: true
