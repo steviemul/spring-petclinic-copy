@@ -35,6 +35,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import jakarta.validation.Valid;
 
+import org.owasp.html.Sanitizers;
+import org.owasp.html.PolicyFactory;
+
 /**
  * @author Juergen Hoeller
  * @author Ken Krebs
@@ -45,6 +48,8 @@ import jakarta.validation.Valid;
 class OwnerController {
 
 	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
+
+	private static final PolicyFactory policy = Sanitizers.FORMATTING.and(Sanitizers.LINKS);
 
 	private final OwnerRepository owners;
 
@@ -76,7 +81,7 @@ class OwnerController {
 		}
 
 		this.owners.save(owner);
-		return "redirect:/owners/" + owner.getId();
+		return "redirect:/owners/" + policy.sanitize(owner.getId());
 	}
 
 	@GetMapping("/owners/find")
