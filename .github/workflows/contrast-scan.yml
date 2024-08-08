@@ -1,6 +1,7 @@
 name: Contrast local scan
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, reopened]
   push:
@@ -17,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses : Contrast-Security-OSS/contrast-local-scan-action@SCAN-5585
+      - uses : Contrast-Security-OSS/contrast-local-scan-action@v1.0.2
         name: Run action against repoository
         with:
           apiUrl: ${{ secrets.CONTRAST__API__URL }}
