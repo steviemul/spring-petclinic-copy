@@ -1,9 +1,9 @@
 name: Contrast local scan main branch
 
 on:
-  workflow_run:
-    workflows: [Dummy Workflow]
-    types: [completed]
+   push:
+    branches:
+    - 'main'
 
 permissions:
   contents: read
