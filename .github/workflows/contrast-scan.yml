@@ -25,4 +25,3 @@ jobs:
           apiOrgId: ${{ secrets.CONTRAST__API__ORGANIZATION }}
           checks: true
           severity: critical
-          new: false

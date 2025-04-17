@@ -83,16 +83,6 @@ class OwnerController {
 		return "redirect:/owners/" + owner.getId();
 	}
 
-	@PostMapping("/owners/new-issue")
-	public String processCreationFormNewIssue(@Valid Owner owner, BindingResult result) {
-		if (result.hasErrors()) {
-			return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
-		}
-
-		this.owners.save(owner);
-		return "redirect:/owners/" + policy.sanitize(owner.getId());
-	}
-
 	@GetMapping("/owners/find")
 	public String initFindForm() {
 		return "owners/findOwners";
