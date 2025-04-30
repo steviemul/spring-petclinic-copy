@@ -6,6 +6,11 @@ on:
     - '*'
     - '!main'
 
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+      
 permissions:
   contents: read
   checks: write
