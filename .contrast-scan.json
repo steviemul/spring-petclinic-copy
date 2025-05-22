@@ -1,0 +1,9 @@
+{
+  "excludes": [
+    "config_files/**",
+    "*.properties",
+    ".github/**"
+  ],
+  "metadata": {
+  }
+}
