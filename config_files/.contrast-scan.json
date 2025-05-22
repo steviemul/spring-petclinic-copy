@@ -1,6 +1,9 @@
 {
-    "excludes": [
-      "**/MavenWrapperDownloader.java",
-      "**/*.js"
-    ]
+  "excludes": [
+    "config_files/**",
+    "*.properties",
+    ".github/**"
+  ],
+  "metadata": {
   }
+}
