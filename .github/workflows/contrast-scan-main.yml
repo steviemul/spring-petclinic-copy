@@ -30,3 +30,4 @@ jobs:
           defaultBranch: true
           checks: true
           severity: critical
+          new: true
